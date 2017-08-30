@@ -29,6 +29,7 @@ int main(int argc, char **argv)
                                dispatch_get_main_queue(), DISPATCH_DATA_DESTRUCTOR_DEFAULT);
         NSError *error = nil;
         id <MTLLibrary> library = [view.device newLibraryWithData:data error:&error];
+        dispatch_release(data);
         if (error)
             qWarning() << "Shader Error" << error;
 
