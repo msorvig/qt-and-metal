@@ -4,8 +4,8 @@
 
 int main(int argc, char **argv)
 {
-    // This example demonstrates how to integreate Metal rendering
-    // with Qt by controlling a Metal view using QWindow. The Metal
+    // This example demonstrates how to integrate Metal rendering
+    // with Qt by controlling a Metal view using a QWindow. The Metal
     // part of the example is copied from the hellotriangle example.
 
     QGuiApplication app(argc, argv);
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
         [renderer mtkView:view drawableSizeWillChange:view.drawableSize];
         view.delegate = renderer;
 
-        // Create and show Qt Window which controls the metal view
+        // Create and show a Qt Window which controls the metal view
         window = QWindow::fromWinId((WId)view);
         window->setTitle("QWindow with MTKView");
         window->resize(640, 480);
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     // Start the event loop
     int code = app.exec();
 
-    // Clean up on exit. The MTKView is owned by the QWindow and need not be released.
+    // Clean up on exit. The QWindow will release the MTKView on destruction.
     delete window;
     [renderer release];
 
