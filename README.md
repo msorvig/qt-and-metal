@@ -21,10 +21,3 @@ window->show();
 ```
 
 ![QWindow with MTKView](https://user-images.githubusercontent.com/296277/29745576-ed0f2e34-8abe-11e7-9088-b6ca163c1bff.png?s=263)
-
-Known Issues
--------------
-
-qmake may try to compile the shader resource file before the shader library has
-been built. Run make again.
-

@@ -12,7 +12,7 @@ hellotriangleshaders_lib.target = hellotriangleshaders.metallib
 hellotriangleshaders_lib.commands = xcrun -sdk macosx metallib hellotriangleshaders.air -o hellotriangleshaders.metallib
 hellotriangleshaders_lib.depends = hellotriangleshaders_air
 QMAKE_EXTRA_TARGETS += hellotriangleshaders_air hellotriangleshaders_lib
-PRE_TARGETDEPS += $$hellotriangleshaders_lib.target
+rcc.depends += $$hellotriangleshaders_lib.target
 RESOURCES += hellotriangleshaders.qrc
 
 # Qt main
